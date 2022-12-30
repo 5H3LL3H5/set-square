@@ -10,6 +10,6 @@ RUN chmod +x /usr/local/sbin/pkg-install.sh /usr/local/sbin/pkg-cleanup.sh /usr/
  && mkdir -p /var/local/ \
  && touch /var/local/docker-installed-packages.txt \
  && ${SYSTEM_UPDATE} \
- && ${PKG_INSTALL} wget gettext sudo gosu iproute2 rsync \
+ && ${PKG_INSTALL} wget gettext sudo gosu iproute2 rsync curl patchelf \
  && ${SYSTEM_CLEANUP}
 # ^ install
