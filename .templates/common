@@ -2,7 +2,7 @@
 ENV TERM="linux" \
     PATH="${PATH}:/usr/local/bin"
 
-RUN mkdir -p /etc/my_exec.d \
+RUN mkdir -p /etc/my_exec.d /etc/my_init.d /usr/local/sbin /usr/local/bin /sbin /usr/bin \
  && mkdir -p /etc/service/.template/log \
  && cd /usr/local/bin \
  && mkdir /Dockerfiles \
@@ -18,7 +18,9 @@ COPY common-files/process-file.sh \
      /usr/local/sbin/
 
 COPY common-files/logger /etc/service/.template/log/run
-RUN chmod +x /etc/service/.template/log/run /usr/local/sbin/*.sh /etc/my_init.d/*.sh
+RUN chmod +x /etc/service/.template/log/run \
+ && (chmod +x /usr/local/sbin/*.sh || echo "No sh files in /usr/local/sbin") \
+ && (chmod +x /etc/my_init.d/*.sh  || echo "No sh files in /etc/my_init.d")
 
 COPY common-files/my_exec /sbin/my_exec
 # ^ common
