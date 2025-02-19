@@ -1,4 +1,4 @@
-defineEnvVar JAVA_VERSION "The version of the Java VM" "8";
+defineEnvVar JAVA_VERSION "The version of the Java VM" "21";
 defineEnvVar BOUNCY_CASTLE_VERSION "The version of Bouncy Castle" "154";
 defineEnvVar BOUNCY_CASTLE_ARTIFACT "The Bouncy Castle artifact" 'bcprov-jdk15on-${BOUNCY_CASTLE_VERSION}.jar';
 defineEnvVar BOUNCY_CASTLE_DOWNLOAD_URL "The Bouncy Castle download URL" 'http://www.bouncycastle.org/download/${BOUNCY_CASTLE_ARTIFACT}';
@@ -12,3 +12,4 @@ defineEnvVar JAVA_HEAP_MAX "The maximum Java heap" "1024m";
 defineEnvVar JAVA_OPTS "Additional Java opts" "";
 defineEnvVar LOGSTASH_VERSION "The Logstash version" "2.3";
 overrideEnvVar ENABLE_LOGSTASH true;
+# vim: syntax=sh ts=2 sw=2 sts=4 sr noet
